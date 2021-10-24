@@ -40,4 +40,9 @@ public class ProdutoController {
         produtoService.delete(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+    @PutMapping(path = "/{id}")
+    public ResponseEntity<Void> replace(@RequestBody Produto produto){
+        produtoService.replace(produto);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }

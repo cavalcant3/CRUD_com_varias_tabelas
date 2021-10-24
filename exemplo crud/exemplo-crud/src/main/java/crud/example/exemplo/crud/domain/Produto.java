@@ -20,4 +20,11 @@ public class Produto {
     private String nome;
     private Double valor;
 
+    public Produto(Integer i, String carro) {
+
+    }
+
+    public Integer getId() {
+        return id;
+    }
 }

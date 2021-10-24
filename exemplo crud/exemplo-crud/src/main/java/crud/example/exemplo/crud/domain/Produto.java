@@ -20,9 +20,7 @@ public class Produto {
     private String nome;
     private Double valor;
 
-   // public Produto(Integer id, String produto, Double valor) {
 
-  //  }
 
     public Integer getId() {
         return id;

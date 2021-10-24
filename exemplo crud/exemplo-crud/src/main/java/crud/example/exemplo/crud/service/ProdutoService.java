@@ -13,7 +13,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class ProdutoService {
     private static List<Produto> produtos;
         static {
-            produtos = new ArrayList<>(List.of(new Produto(2,"carro", 555.9), new Produto(2, "moto", 99.6)));
+            produtos = new ArrayList<>(List.of(new Produto(1,"carro", 555.9), new Produto(2, "moto", 99.6)));
         }
 
     //definindo método de listar todos

@@ -18,6 +18,7 @@ public class ProdutoService {
     //definindo método de listar todos
     public List<Produto> listAll() {return produto;}
 
+    //definindo método de listar por id único
     public Produto findById(Integer id){
             return produto.stream()
                     .filter(produto -> produto.getId() == id)

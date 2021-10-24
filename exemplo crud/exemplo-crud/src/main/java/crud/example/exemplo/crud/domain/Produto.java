@@ -27,4 +27,9 @@ public class Produto {
     public Integer getId() {
         return id;
     }
+
+    public Produto add(Produto produto) {
+        produto.add(produto);
+        return produto ;
+    }
 }

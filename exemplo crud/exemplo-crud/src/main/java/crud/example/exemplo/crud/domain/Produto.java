@@ -20,9 +20,9 @@ public class Produto {
     private String nome;
     private Double valor;
 
-    public Produto(Integer id, String produto) {
+   // public Produto(Integer id, String produto, Double valor) {
 
-    }
+  //  }
 
     public Integer getId() {
         return id;
@@ -31,5 +31,8 @@ public class Produto {
     public Produto add(Produto produto) {
         produto.add(produto);
         return produto ;
+    }
+
+    public void setId(long nextLong) {
     }
 }

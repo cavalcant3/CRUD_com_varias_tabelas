@@ -7,12 +7,13 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 @Service
 public class ProdutoService {
     private static List<Produto> produtos;
         static {
-            produtos = new ArrayList<>(List.of(new Produto(1, "carro"), new Produto(2, "moto")));
+            produtos = new ArrayList<>(List.of(new Produto(2,"carro", 555.9), new Produto(2, "moto", 99.6)));
         }
 
     //definindo método de listar todos
@@ -28,7 +29,7 @@ public class ProdutoService {
     }
 
     public Produto save(Produto produto){
-
+        produto.setId(ThreadLocalRandom.current().nextLong(3,1000));
         produtos.add(produto);
         return produto;
     }

@@ -9,8 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@AllArgsConstructor
-@NoArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
 @Data
 @Entity
 public class Produto {
@@ -20,17 +20,13 @@ public class Produto {
     private String nome;
     private Double valor;
 
-
-
-    public Integer getId() {
-        return id;
+    @Deprecated
+    public Produto() {
     }
 
-    public Produto add(Produto produto) {
-        produto.add(produto);
-        return produto ;
+    public Produto(String nome, Double valor) {
+        this.nome = nome;
+        this.valor = valor;
     }
 
-    public void setId(long nextLong) {
-    }
 }

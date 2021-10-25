@@ -1,10 +1,12 @@
 package crud.example.exemplo.crud.controller;
 
 import crud.example.exemplo.crud.domain.Produto;
+import crud.example.exemplo.crud.repository.ProdutoRepository;
 import crud.example.exemplo.crud.service.ProdutoService;
 import lombok.extern.log4j.Log4j2;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +16,10 @@ import java.util.List;
 @RestController
 @RequestMapping("produto") // localhost:8080/produto
 @Log4j2
+@EnableAutoConfiguration
 public class ProdutoController {
     @Autowired
-   private final ProdutoService produtoService;
+    private final ProdutoService produtoService;
 
     public ProdutoController(ProdutoService produtoService) {
         this.produtoService = produtoService;
@@ -32,9 +35,12 @@ public class ProdutoController {
     }
 
     @PostMapping
-    public ResponseEntity<Produto> save(@RequestBody Produto produto){
-        return ResponseEntity.ok(produtoService.save(produto));
+    public Produto save(@RequestBody Produto produto){
+        return produtoService.save(produto);
     }
+    //public ResponseEntity<Produto> save(@RequestBody Produto produto){
+    //    return ResponseEntity.ok(produtoService.save(produto));
+    //}
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<Void> delete(@PathVariable Integer id){
         produtoService.delete(id);

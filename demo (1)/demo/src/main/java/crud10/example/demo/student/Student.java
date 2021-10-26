@@ -24,7 +24,7 @@ public class Student {
     }
 
     //constructor com todos os atributos
-    public Student(Long id, String name, String email, LocalDate dob, Integer age) {
+    public Student(String name, String email, LocalDate dob, Integer age) {
         this.id = id;
         this.name = name;
         this.email = email;

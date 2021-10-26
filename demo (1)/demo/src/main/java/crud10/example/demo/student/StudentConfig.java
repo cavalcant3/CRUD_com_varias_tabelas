@@ -5,10 +5,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDate;
-import java.time.Month;
+
 import java.util.List;
 
-import static java.util.Calendar.JANUARY;
+
 
 @Configuration
 public class StudentConfig {
@@ -20,8 +20,7 @@ public class StudentConfig {
 
                     "MAtheus",
                     "eger@gmail.com",
-                    LocalDate.of(2000, 1, 5),
-                    21
+                    LocalDate.of(1999, 1, 5)
 
             );
             Student teste = new Student(
@@ -29,8 +28,7 @@ public class StudentConfig {
 
                     "teste",
                     "e111ger@gmail.com",
-                    LocalDate.of(2000, 1, 5),
-                    21
+                    LocalDate.of(2013, 1, 5)
 
             );
             repistory.saveAll(

@@ -2,6 +2,7 @@ package crud10.example.demo.student;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.Period;
 
 @Entity
 @Table
@@ -17,6 +18,7 @@ public class Student {
     private String name;
     private String email;
     private LocalDate dob;
+    @Transient // não vira coluna no banco
     private Integer age;
 
     //constructor vazio
@@ -24,12 +26,11 @@ public class Student {
     }
 
     //constructor com todos os atributos
-    public Student(String name, String email, LocalDate dob, Integer age) {
+    public Student(String name, String email, LocalDate dob) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.dob = dob;
-        this.age = age;
     }
 
     //getters e setters
@@ -66,7 +67,10 @@ public class Student {
     }
 
     public Integer getAge() {
-        return age;
+        //vai pegar a data de nascimento e
+        // calcular com a data atual e então irá retornar os anos
+        // linha 21 @Transient responsável por isso
+        return Period.between(this.dob, LocalDate.now()).getYears();
     }
 
     public void setAge(Integer age) {

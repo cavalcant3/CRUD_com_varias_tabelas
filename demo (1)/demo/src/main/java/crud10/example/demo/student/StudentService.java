@@ -30,4 +30,21 @@ public class StudentService {
         }
         studentRepistory.save(student);
     }
+
+    public void deleteStudent(Long studentId) {
+        boolean exist = studentRepistory.existsById(studentId);
+        if (!exist){
+            throw new IllegalStateException("student with id" + studentId + "does not exists");
+
+        }
+        studentRepistory.deleteById(studentId);
+
+
+       
+    }
+
+    public void replace(Student student) {
+        deleteStudent(student.getId());
+        studentRepistory.save(student);
+    }
 }

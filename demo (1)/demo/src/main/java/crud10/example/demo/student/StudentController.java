@@ -2,7 +2,7 @@ package crud10.example.demo.student;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 
